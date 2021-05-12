@@ -3,7 +3,7 @@
 module probador_estructural( 
     
     input  [1:0] data_out_conductual,
-    input  [1:0] data_out_estructural,
+    input  [1:0] data_out_estructural_yosis,
 
     output reg clk,
     output reg reset_L,
@@ -36,7 +36,7 @@ module probador_estructural(
 		$display ("\t\ttiempo\t\tclk,\tselector,\treset_L,\tdata_in0,\tdata_in1,\tdata_out Yosys\tchecker\t\tcontador conductual\t contador estructural");
 
 		// Mensaje que se imprime en consola cada vez que un elemento de la lista cambia
-		$monitor($time,"\t\t%b\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t\t%b\t\t\t%b", clk, selector, reset_L, data_in0, data_in1, data_out_estructural, check, counter_conductual, counter_conductual);
+		$monitor($time,"\t\t%b\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t\t%b\t\t\t%b", clk, selector, reset_L, data_in0, data_in1, data_out_estructural_yosis, check, counter_conductual, counter_conductual);
 
         // Asignamos valores
 		{data_in0} = 2'b00; 
@@ -72,7 +72,7 @@ module probador_estructural(
     // Checker
 
     always  @(posedge clk)begin
-        if ( data_out_conductual == data_out_estructural)
+        if ( data_out_conductual == data_out_estructural_yosis)
             check <=1;
         else
             check <=0;
@@ -88,7 +88,7 @@ module probador_estructural(
             counter_switch <= 0;
         end 
 
-        if (data_out_estructural[0] | data_out_estructural[1] ) begin 
+        if (data_out_estructural_yosis[0] | data_out_estructural_yosis[1] ) begin 
             counter_switch_est <= 1;
         end else if (ready_est) begin
             counter_switch_est <= 0;
@@ -106,7 +106,7 @@ module probador_estructural(
 
             if (counter_switch_est)
                 counter_estructural <= counter_estructural +1;
-                if (data_out_estructural == 2'b11)
+                if (data_out_estructural_yosis == 2'b11)
                     counter_estructural <= counter_estructural +1;
             else
                 ready_est <= 0;   
@@ -122,6 +122,6 @@ module probador_estructural(
 	initial	clk 	<= 0;	
 
     //Toggle cada 2*10 nano segundos		
-	always	#20 clk 	<= ~clk;
+	always	#3 clk 	<= ~clk;
     		
 endmodule

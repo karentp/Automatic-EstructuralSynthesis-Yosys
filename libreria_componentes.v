@@ -9,7 +9,7 @@ module and_lib #( parameter PwrC = 0)
                     output out);
 
 // Retardos
-        assign #(1:3:4, 1:3:4) out = A&B;
+        assign #(1:2.9:4.2, 1:2.9:4.2) out = A&B;
 
 //assign #100 out = A&B;
 
@@ -26,7 +26,7 @@ module or_lib #( parameter PwrC = 0)
 // Retardos
 //assign #(1:2.75:4.5, 1:2.75:4.5) out = A | B;
  
-        assign #(0:3.8:3.8, 1:3.8:3.8) out = A | B;
+        assign #(0.9:1.5:3.6, 0.9:1.5:3.6) out = A | B;
 
 
 endmodule
@@ -40,7 +40,7 @@ module not_lib #( parameter PwrC = 0)
 
 // Retardos
 
-        assign #(1:1:1.7, 1:1:1.7) out = ~A;
+        assign #(1:1:3, 1:1:3) out = ~A;
     
 
 endmodule
