@@ -1,5 +1,5 @@
 # Automatic-EstructuralSynthesis-Yosys
-Estructural Synthesis using Yosys for a Flip flop with memory, based on the conductual model.
+Estructural Synthesis using Yosys and Verilog for a Flip flop with memory, based on the conductual model.
 
 ## Requirements
 
