@@ -5,9 +5,13 @@
 
 // includes de archivos de verilog
 
-`include "sintetizado.v"
 `include "mux_memoria_conductual.v"
 `include "probador_estructural.v"
+`include "cmos_cells.v"
+//`include "sintetizado.v"
+`include "sintetizado_conlib.v"
+
+
 
 
 
@@ -28,7 +32,7 @@ module BancoPruebasEstructural;
 	// Probador: generador de señales y monitor
 	probador_estructural 	prob( .clk(clk), .selector(selector), .reset_L(reset_L), 
                      .data_in0(data_in0), .data_in1(data_in1), .data_out_conductual(data_out_conductual),
-					.data_out_estructural(data_out_estructural), .data_out_estructural_1(data_out_estructural_1));
+					.data_out_estructural(data_out_estructural));
 	
 
 
