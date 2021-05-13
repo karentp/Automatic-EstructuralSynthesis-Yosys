@@ -8,9 +8,9 @@
 `include "mux_memoria_conductual.v"
 `include "mux_memoria_estructural.v"
 `include "probador_estructural_comparativo.v"
-`include "cmos_cells_delay.v"
+//`include "cmos_cells_delay.v"
 //`include "sintetizado.v"
-`include "sintetizado_conlib.v"
+//`include "sintetizado_conlib.v"
 
 
 

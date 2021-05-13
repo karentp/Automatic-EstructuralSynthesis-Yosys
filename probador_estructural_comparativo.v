@@ -37,7 +37,7 @@ module probador_estructural(
 		$display ("\t\ttiempo\t\tclk,\tselector,\treset_L,\tdata_in0,\tdata_in1,\tdata_out Yosys \t data_out Manual\tchecker\t\tcontador conductual\t contador estructural");
 
 		// Mensaje que se imprime en consola cada vez que un elemento de la lista cambia
-		$monitor($time,"\t\t%b\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t\t%b\t\t\t%b\t%b", clk, selector, reset_L, data_in0, data_in1, data_out_estructural, data_out_estructural_yosis, check, counter_conductual, counter_conductual);
+		$monitor($time,"\t\t%b\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t%b\t\t\t%b\t\t\t%b\t\t%b", clk, selector, reset_L, data_in0, data_in1, data_out_estructural, data_out_estructural_yosis, check, counter_conductual, counter_conductual);
 
         // Asignamos valores
 		{data_in0} = 2'b00; 

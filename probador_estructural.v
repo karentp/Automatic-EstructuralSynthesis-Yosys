@@ -122,6 +122,6 @@ module probador_estructural(
 	initial	clk 	<= 0;	
 
     //Toggle cada 2*10 nano segundos		
-	always	#3 clk 	<= ~clk;
+	always	#4 clk 	<= ~clk;
     		
 endmodule

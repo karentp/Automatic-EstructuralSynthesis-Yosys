@@ -1,0 +1,6 @@
+	read_verilog mux_memoria_conductual.v;
+	hierarchy -check -top mux_memoria;
+	proc; opt; fsm; opt; memory; opt
+	techmap; opt;
+	clean;
+	write_verilog sintetizado.v;
